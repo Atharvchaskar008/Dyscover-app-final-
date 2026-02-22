@@ -1,0 +1,62 @@
+# Dyscover Implementation Plan
+
+Goal: Build "Dyscover," a gamified React Native (Expo) app for dyslexia literacy, integrating Duolingo-style UI and Google Gemini AI for handwriting analysis.
+
+## User Review Required
+
+> [!IMPORTANT]
+> - **Firebase Credentials:** I will initialize Firebase, but please verify if you have an existing Firebase project or if I should set it up with placeholder credentials for now.
+> - **Gemini API Key:** The Gemini AI integration will require a valid API key. Ensure this key is stored securely (e.g., in `.env` or EXPO environment variables).
+
+## Proposed Changes
+
+We will start with an Expo project setup using Expo Router.
+
+### Project Scaffolding
+- Initialize project with `npx create-expo-app@latest .`
+- Install `lucide-react-native`, `firebase`, `@google/generative-ai`.
+- Configure Expo router and bare minimum structure.
+
+### Theme Configuration
+#### [NEW] src/styles/theme.ts
+- Define colors: Primary Cream `#FFFDD0`, and UI colors for nodes and text.
+- Define typography: Bold sans-serif fonts with 1.5x letter spacing.
+
+### State & Logic
+#### [NEW] src/context/UserContext.tsx
+- Implement a React Context to manage:
+  - Hearts (max 5)
+  - XP (score)
+  - Streak
+- Logic to deduct hearts and track progress.
+
+#### [NEW] src/services/firebase.ts
+- Initialize Firebase app.
+- Setup Firestore integration to save and load User XP and Streak.
+
+#### [NEW] src/services/gemini.ts
+- Integrate `@google/generative-ai` to use `gemini-1.5-flash`.
+- Provide a prompt that enforces simple encouraging JSON output for analyzing handwriting images (base64) for b/d reversals and spacing issues.
+
+### Components
+#### [NEW] src/components/Header.tsx
+- Displays current Streak (🔥), Hearts (❤️), and XP (🏆).
+
+#### [NEW] src/components/LearningNode.tsx
+- A single circular node for the learning map.
+
+### Screens
+#### [NEW] app/index.tsx (Home Screen)
+- Acts as the main "Learning Map".
+- A ScrollView displaying the Header and a winding path of 10 `LearningNode` components.
+
+## Verification Plan
+
+### Automated Tests
+- None specified currently; can be expanded if needed.
+
+### Manual Verification
+- We will start the Expo web preview using `npx expo start -w`.
+- Verify the header tracks correctly.
+- Verify the Learning Map renders 10 nodes in a scrolling path geometry.
+- Stub the Gemini and Firebase calls initially to confirm UI behavior before full end-to-end testing.

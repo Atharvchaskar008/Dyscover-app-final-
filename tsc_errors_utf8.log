@@ -1,0 +1,4 @@
+﻿app/index.tsx(13,31): error TS2304: Cannot find name 'useTheme'.
+src/components/Header.tsx(20,45): error TS2339: Property 'nodeCompleted' does not exist on type '{ background: string; primary: string; secondary: string; tertiary: string; textPrimary: string; textSecondary: string; white: string; border: string; cardGlow: string; error: string; }'.
+src/components/LearningNode.tsx(19,46): error TS2339: Property 'nodeCompleted' does not exist on type '{ background: string; primary: string; secondary: string; tertiary: string; textPrimary: string; textSecondary: string; white: string; border: string; cardGlow: string; error: string; }'.
+src/components/LearningNode.tsx(21,29): error TS2339: Property 'nodeDefault' does not exist on type '{ background: string; primary: string; secondary: string; tertiary: string; textPrimary: string; textSecondary: string; white: string; border: string; cardGlow: string; error: string; }'.

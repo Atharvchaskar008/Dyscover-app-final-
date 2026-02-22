@@ -1,0 +1,10 @@
+﻿
+C:\Users\athar\Downloads\Dyscover--android-main\Dyscover--android-main\app\index.tsx
+   14:20  warning  'isDark' is assigned a value but never used                      @typescript-eslint/no-unused-vars
+  197:74  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\athar\Downloads\Dyscover--android-main\Dyscover--android-main\src\components\Navbar.tsx
+  16:11  warning  'isFeatures' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 3 problems (1 error, 2 warnings)
+
